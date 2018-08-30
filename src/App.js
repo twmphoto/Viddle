@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './components/App.css';
-import forms from './components/forms'
-import updateforms from './components/updateforms'
-import userpages from './components/userpages'
+// import forms from './components/forms'
+// import updateforms from './components/updateforms'
+// import userpages from './components/userpages'
 
 
 class App extends Component {
@@ -12,7 +12,7 @@ class App extends Component {
     editingUser: {},
     editingUserTag: '',
     editingTag :{},
-    isEditing: fals+e
+    isEditing: false
   }
 
   /*Tenative User Object Design
@@ -74,7 +74,6 @@ user format=
     return (
       <div className="container">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
