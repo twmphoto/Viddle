@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
 
 
 class Userspage extends Component {
@@ -18,3 +19,31 @@ class Userspage extends Component {
 }
 
 export default Userspage;
+=======
+import logo from './logo.svg';
+
+
+class UsersPage extends Component{
+    state={
+
+    }
+    render() {
+        return (
+          <div className='container'>
+            <div className="row">
+                <h1>Hey There</h1>
+            </div>
+          </div>
+        );
+      }
+}
+
+
+    
+
+
+
+
+
+export default UsersPage;
+>>>>>>> 726aeca17373fc599b81344a236deb36871bd603
