@@ -12,5 +12,5 @@ import Userspage from './components/userspage'
 
 
 
-ReactDOM.render(<Userspage />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 
