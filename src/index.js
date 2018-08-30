@@ -2,7 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import Userspage from './components/userspage'
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+/**
+ * 
+ * This page will allow us to render any component. I've started to 
+ */
+
+
+
+ReactDOM.render(<Userspage />, document.getElementById('root'));
+
