@@ -3,16 +3,12 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
 .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+  display: flex;
+  height:80%;
+  padding: 10px;
   color: white;
+  margin: auto;
 }
 
 .App-title {
@@ -23,7 +19,49 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.banners {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: 1fr 100px 1fr;
+grid gap: 0px;
+border-radius: 10px;
+border: 1px black;
+}
+
+.banners > div{
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 2em;
+color: #ffead;
+border-radius: 0px;
+}
+
+
+.banners > div:nth-child(4n){
+background-color: lightblue;
+font-color: White;
+}
+
+.banners > div:nth-child(5n){
+background-color: yellow;
+font-color: White;
+}
+
+.banners > div:nth-child(6n){
+background-color: red;
+font-color: White;
+}
+
+.letterbox {
+position: relative;
+text-align:center;
+color:grey;
+}
+
+.h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

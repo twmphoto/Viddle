@@ -1,5 +1,5 @@
 import React, {Component } from 'react';
-import {APP, USERPAGE,LOGIN }
+import {APP, USERPAGE, LOGIN }
 
 
 
@@ -29,8 +29,15 @@ renderPath = path => {
             ) 
         case DASHBOARD:
             return (
+                //Userpage. js instead of DASHBOARD
                 <userspage
+                    username = {this.state.user.username}
+                    goodLogin = {this.state.goodLogin}
+                    />
             )
+            default: 
+            return <h1> 404 not found</h1>
     }
 
 }
+
