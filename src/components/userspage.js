@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-// import user_navbar from './user_navbar';
-// import user_sortbar from'./user_sortbar';
-// import user_content from './user_content';
+import user_navbar from './user_navbar';
+import user_sortbar from'./user_sortbar';
+import user_content from './user_content';
 import ReactPlayer from 'react-player';
 
 
@@ -11,7 +11,7 @@ import ReactPlayer from 'react-player';
 class UsersPage extends Component {
   state = {
     newurl:[],  
-    urls: [],
+    urls: ['https://youtu.be/tpUt4KGPZTY'],
 
   }
 
@@ -23,6 +23,23 @@ class UsersPage extends Component {
     })
   }
 
+  onUrlChange = e => {
+    this.setState({
+      urls:''
+    })
+  }
+
+
+  formSubmit = e => {
+    e.preventDefault();
+
+    // object { email, username, password }
+    this.state.urls;
+
+    this.setState({
+      urls:[],
+    })
+  }
 
 
 
@@ -32,15 +49,13 @@ class UsersPage extends Component {
   render() {
     return (
       <div className='container'>
-        {this.state.urls.map(url => <ReactPlayer url={url} />)}
-        {/* <form 
-        >
+        <form onSubmit={this.formSubmit}>
           <div className='form-group'>
             <label for="userUrl">Paste the URL below</label>
-            <input type="url" value={this.state.urls} className="form-control" id='userUrl' placeholder='URL' />
+            <input type="text" value={this.urls} onChange={this.onUrlChange} className="form-control" id='userUrl' placeholder='URL' />
           </div>
           <button type='submit' className="btn btn-dark">Submit</button>
-        </form> */}
+        </form>
       </div>
     );
   }
@@ -48,7 +63,7 @@ class UsersPage extends Component {
 
 
 
-
+        //{/* {this.state.urls.map(url => <ReactPlayer url={url} />)}
 
 
 
