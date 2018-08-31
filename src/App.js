@@ -93,7 +93,7 @@ buttonClicked = () => {
   //Black Box Delete Component, currently adapted for changing video collection
   // deleteVideo = index => {
   //   let newVideoCollection = [
-  //     ...this.state.users.vidcollection.slice(0, index/*What is this? */)
+  //     ...this.state.users.vidcollection.slice(0, index) /*What is this? */
   // ...this.state.users.vidcollection.slice(index + 1),
   //   ];
   //   this.setState({ users.vidcollection: /*what is this?*/ newVideoCollection })
@@ -189,27 +189,7 @@ buttonClicked = () => {
 
       </div>
       </div>
-      
 
-
-
-        <div>
-          <h3>Display</h3>
-        </div>
-        <div>
-          <h3>Share</h3>
-        </div>
-        // <div>
-        //   <p>Collect all your favorite videos from your favorite media sites into one
-        //   seamless user experience</p>
-        // </div>
-        // <div>
-        //   <p>Post your latest video find to your personal wall.</p>
-        // </div>
-        // <div>
-        //   <p>Share your interests with the world, and meet new friends</p>
-        // </div>
-    </div>
   
     );
   }  
