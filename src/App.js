@@ -150,7 +150,7 @@ login = user => {
         </header>
         {/* App Change 8/31 */}
       <div>
-        <div>{<h1> This is my header</h1>}
+        <div>
         </div>
           {this.renderPath(this.state.path)}  
         </div>  
