@@ -3,7 +3,7 @@ import './components/App.css';
 import forms from './components/forms';
 import updateforms from './components/updateforms';
 import userspage from './components/userspage'
-import {LOGIN, HOME, USERS} from './constants/constants';
+import { LOGIN, HOME, USERS } from './constants/constants';
 
 
 class App extends Component {
@@ -16,7 +16,14 @@ class App extends Component {
     }
   }
 
-
+  state = {
+    path: HOME,
+    user: {
+      username: 'abc',
+      password: 'abc'
+    },
+    goodLogin: false
+  }
 
   //   //Tenative User Object Design
   // user format=
@@ -46,48 +53,43 @@ buttonClicked = () => {
   this.props.changePath(DASHBOARD)
 }
 
-    //Login/Create Account 
-    // buttonClicked = ()=>{ 
-    //   this.props.login(this.state)
-    //   this.props.changePath(USERPAGE)
-    // }
+
+  //Login/Create Account 
+  buttonClicked = () => {
+    this.props.login(this.state)
+    this.props.changePath(USERPAGE)
+  }
 
 
 
-    //Add users
-    // addUser = User = {
-    //   let newUser = [...this.state.users, /*What is this? */user];
-    //   this.setState({ users: NewUsers});
-    // }
 
-    //   }
-
-changePath = x => {
-  this.setState({path: x})
+  changePath = x => {
+    this.setState({ path: x })
 
   };
 
-    /*Tenative User Object Design
-  user format=
-  {
-    firstname: ,
-    lastnames: ,
-    username: , 
-    password: ,
-    vidcollection: [ videoID: , vidURL: , favorite: true/false
-                    ]
-  }
-  
+
+  /** 
+  //Tenative User Object Design
+  user format =
+    {
+      firstname: ,
+      lastnames: ,
+      username: ,
+      password: ,
+      vidcollection: [videoID: , vidURL: , favorite: true / false
+      ]
+    }
   */
 
-    //Add users
-    // addUser = User = {
-    //   let newUser = [...this.state.users, /*What is this? */user];
-    //   this.setState({ users: NewUsers });
-    // }
+  //Add users
+  addUser = User => {
+    newUser = [...this.state.users, user];
+    this.setState({ users: NewUsers });
+  }
 
 
-
+  /**
   //Black Box Delete Component, currently adapted for changing video collection
   // deleteVideo = index => {
   //   let newVideoCollection = [
@@ -191,9 +193,26 @@ changePath = x => {
 
 
 
-
+        <div>
+          <h3>Display</h3>
+        </div>
+        <div>
+          <h3>Share</h3>
+        </div>
+        // <div>
+        //   <p>Collect all your favorite videos from your favorite media sites into one
+        //   seamless user experience</p>
+        // </div>
+        // <div>
+        //   <p>Post your latest video find to your personal wall.</p>
+        // </div>
+        // <div>
+        //   <p>Share your interests with the world, and meet new friends</p>
+        // </div>
+    </div>
+  
     );
-  }
+  }  
 }
 
 export default App;
