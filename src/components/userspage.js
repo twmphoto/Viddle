@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-// import user_content from './user_content';
-// import ReactPlayer from 'react-player';
+import user_content from './user_content';
+import ReactPlayer from 'react-player';
 
 
 
@@ -8,22 +8,24 @@ import React, { Component } from 'react';
 
 class UsersPage extends Component {
   state = {
-    newurl:[],  
-    urls: ['https://youtu.be/tpUt4KGPZTY'],
+    // newlinks:[],  
+    links: [],
+    urls:'',
+    isValid: false
 
   }
 
 
-  NewUrlLink = url =>{
-    let newLink = [...this.state.urls, url]
+  NewUrlLink = links =>{
+    let newLink = [...this.state.links, links]
     this.setState({
-      urls: newLink
+      links: newLink
     })
   }
 
   onUrlChange = e => {
     this.setState({
-      urls:''
+      urls: e.target.value
     })
   }
 
@@ -32,13 +34,11 @@ class UsersPage extends Component {
     e.preventDefault();
 
     // object { email, username, password }
-    this.state.urls;
-
+    this.NewUrlLink(this.state.urls),
     this.setState({
-      urls:[],
-    })
-  }
-
+      urls:''
+    });
+   }
 
 
 
@@ -47,28 +47,31 @@ class UsersPage extends Component {
   render() {
     return (
       <div className='container'>
-              {
-          this.props.goodLogin && <h1>Hello! {this.props.username}</h1>
-        }
+              <div className='page-header'>
+                <h1>This is our user page</h1>
+              </div>   
         <form onSubmit={this.formSubmit}>
           <div className='form-group'>
             <label for="userUrl">Paste the URL below</label>
-            <input type="text" value={this.urls} onChange={this.onUrlChange} className="form-control" id='userUrl' placeholder='URL' />
+            <input type="url" value={this.state.urls} onChange={this.onUrlChange} className="form-control" id='userUrl' placeholder='URL' />
           </div>
           <button type='submit' className="btn btn-dark">Submit</button>
         </form>
-      </div>
+        <div>
+        
 
-      
+        </div>
+      </div>
     );
   }
 }
 
 
 
-        //{/* {this.state.urls.map(url => <ReactPlayer url={url} />)}
+
 
 
 
 
 export default UsersPage;
+
