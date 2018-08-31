@@ -3,59 +3,53 @@ import './components/App.css';
 // import forms from './components/forms'
 // import updateforms from './components/updateforms'
 // import userpages from './components/userpages'
-<<<<<<< HEAD
-=======
-import {LOGIN, USERPAGE} from './constants'
->>>>>>> 9b98489dedda1a15ba32d9f5ed1e0705fe5745c6
+// import {LOGIN, USERPAGE} from './constants'
 
 
 class App extends Component {
 
-  state = {
-    users: [],
-    editingUser: {},
-    editingUserTag: '',
-    editingTag :{},
-    isEditing: false
-<<<<<<< HEAD
-=======
-    path: 'HOME'
-  }
+//   state = {
+//     users: [],
+//     editingUser: {},
+//     editingUserTag: '',
+//     editingTag :{},
+//     isEditing: false
+//     path: 'HOME'
+//   }
 
-  changePath = x =>{
-    this.setState([path x])
+//   changePath = x =>{
+//     this.setState([path x])
 
-  };
+//   };
 
-  /*Tenative User Object Design
-user format=
-{
-  firstname: ,
-  lastnames: ,
-  username: , 
-  password: ,
-  vidcollection: [ videoID: , vidURL: , favorite: true/false
-                  ]
-}
+//   /*Tenative User Object Design
+// user format=
+// {
+//   firstname: ,
+//   lastnames: ,
+//   username: , 
+//   password: ,
+//   vidcollection: [ videoID: , vidURL: , favorite: true/false
+//                   ]
+// }
 
-*/
+// */
 
-//Login/Create Account 
-buttonClicked = ()=>{
-  this.props.login(this.state)
-  this.props.changePath(USERPAGE)
-}
+// //Login/Create Account 
+// buttonClicked = ()=>{
+//   this.props.login(this.state)
+//   this.props.changePath(USERPAGE)
+// }
 
 
 
-//Add users
-addUser = User = {
-  let newUser = [...this.state.users, /*What is this? */user];
-  this.setState({ users: NewUsers});
-}
->>>>>>> 9b98489dedda1a15ba32d9f5ed1e0705fe5745c6
+// //Add users
+// addUser = User = {
+//   let newUser = [...this.state.users, /*What is this? */user];
+//   this.setState({ users: NewUsers});
+// }
 
-  }
+//   }
 
 //   changePath = x =>{
 //     this.setState([path x])
@@ -123,13 +117,13 @@ addUser = User = {
         <header className="App-header">
           <img src ={"./components/photo.jpg"}/>
         </header>
-        <div>
+        {/* <div>
           <input value = {this.state.user.username}
             onChange = {e=> {this.setState({username: e.target.value}) }} />
           <input value = {this.state.user.password}
             onChange = {e=> {this.setState({password: e.target.value}) }} />
           <button onClick={this.buttonClicked}>Login</button>
-        </div>
+        </div> */}
         <p className="App-intro"><h2>
           Join Viddle today and be part of next gen social media phenomena
           </h2>

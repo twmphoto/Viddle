@@ -23,7 +23,7 @@
 display: grid;
 grid-template-columns: repeat(3, 1fr);
 grid-template-rows: 1fr 100px 1fr;
-grid gap: 0px;
+grid-gap: 0px;
 border-radius: 10px;
 border: 1px black;
 }
@@ -33,24 +33,20 @@ display: flex;
 justify-content: center;
 align-items: center;
 font-size: 2em;
-color: #ffead;
 border-radius: 0px;
 }
 
 
 .banners > div:nth-child(4n){
 background-color: lightblue;
-font-color: White;
 }
 
 .banners > div:nth-child(5n){
 background-color: yellow;
-font-color: White;
 }
 
 .banners > div:nth-child(6n){
 background-color: red;
-font-color: White;
 }
 
 .letterbox {
