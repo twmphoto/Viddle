@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
 import './components/App.css';
-import forms from './components/forms';
-import updateforms from './components/updateforms';
+// import forms from './components/forms';
+// import updateforms from './components/updateforms';
 import userspage from './components/userspage'
-import { LOGIN, HOME, USERS } from './constants/constants';
+import { LOGIN, HOME, NEWUSERS } from './constants/constants';
+import UsersPage from './components/userspage';
 
 
 class App extends Component {
 //Add Change 8/31 9:52AM
 state = {
-    path: HOME,
+    path: 'HOME',
     user: {
-      username: 'abc',
-      password: 'abc'
+      username: 'asda',
+      password: 'asdasd'
     },
     goodLogin: false
   }
@@ -30,29 +31,20 @@ state = {
   
 
 
-
 //Add Change 8/31 9:53AM
-login = user => {
-  if (user.username === this.state.user.username && user.password === this.state.user.password){
-      this.setState({ goodLogin: true});
-  } else {
-    this.setState({ goodLogin: false});
-  }
+login = (e, user) => {  
+  e.preventDefault();
+  console.log("Login clicked!");
+  this.changePath('LOGIN')
+
+  // if (this.state.user.username === this.state.user.username && this.state.user.password === this.state.user.password){
+  //     this.setState({ goodLogin: true});
+  // } else {
+  //   this.setState({ goodLogin: false});
+  //   console.log('bad')
+  //}
+
 }
-
-// buttonClicked = () => {
-//   this.props.login(this.state)
-//   this.props.changePath(DASHBOARD)
-// }
-
-
-  //Login/Create Account 
-  // buttonClicked = () => {
-  //   this.props.login(this.state)
-  //   this.props.changePath(USERPAGE)
-  // }
-
-
 
 
   changePath = x => {
@@ -61,106 +53,69 @@ login = user => {
   };
 
 
-  /** 
-  //Tenative User Object Design
-  user format =
-    {
-      firstname: ,
-      lastnames: ,
-      username: ,
-      password: ,
-      vidcollection: [videoID: , vidURL: , favorite: true / false
-      ]
-    }
-  */
-
-  //Add users
-  // addUser = User => {
-  //   newUser = [...this.state.users, user];
-  //   this.setState({ users: NewUsers });
-  // }
-
-
-  /**
-  //Black Box Delete Component, currently adapted for changing video collection
-  // deleteVideo = index => {
-  //   let newVideoCollection = [
-  //     ...this.state.users.vidcollection.slice(0, index/*What is this?) */
-  // ...this.state.users.vidcollection.slice(index + 1),
-  //   ];
-  //   this.setState({ users.vidcollection: /*what is this?*/ newVideoCollection })
-
-    //Black Box Update Component, currently adapted for video collection
-  //   updateVideo = (index, ride) => {
-  //     let newVideoCollection = [
-  //       ...this.state.users.vidcollection.slice(0, index), user, /*what is this? */
-  //       ...this.state.users.vidcollection.slice(index + 1)
-  //     ];
-  //     this.setState({
-  //       users: newUsers, /*What should this be?*/
-  //       isEditing: false
-  //     });
-  //   }
-
-  // }
-  //If you give me the Index,  I will look up the object in this index
-  // editOn = index => {
-  //   this.setState({
-  //     editingVidCollection: this.state.users.vidcollection[index],
-  //     editingIndex: index, /*what is this?*/
-  //     //conditional rendering
-  //     isEditing: !this.state.isEditing
-
-  //   })
-
-  // }
-
   //App Change 8/31
   
-        renderPath = path => {
-          switch (path) {
-             case HOME:
-             return <h1>This is my home Page</h1>
+  renderPath = path => {
+    switch (path) {
+        case HOME:
+        return this.state.path
+
+      case 'LOGIN':
+        console.log('renderLogin')
+          return (
+          <UsersPage
+            changePath = {this.changePath}
+            goodLogin = {this.goodLogin}
+              />
+        )
+      case NEWUSERS:
+          return (
+          <userspage
+            username = {this.state.user.username}
+
+            />
+        )
+        default:
+          return<h1>404 not found</h1>
+      }
+    }
       
-            case LOGIN:
-               return (
-                <loginScreen
-                  changePath = {this.changePath}
-                  login = {this.login} />
-              )
-            case USERS:
-               return (
-                <userspage
-                  username = {this.state.user.username}
-                  goodLogin = {this.state.goodLogin}
-                  />
-              )
-              default:
-                return<h1>404 not found</h1>
-            }
-          }
-      
+    onChange= e =>{
+      this.setState({
+        [e.target.name]: e.target.value
+      });
+    }
 
 
   render() {
     return (
+      
       <div className="container">
         <header className="App-header">
           <img src={"./components/photo.jpg"} />
         </header>
         {/* App Change 8/31 */}
+        {
+          this.renderPath(this.state.path)
+        }
       <div>
         <div>
+<<<<<<< HEAD
+=======
+          {<h1> Welcome to Viddle. Please Sign In.</h1>}
+        </div> 
+      </div>
+      <form>  
+        <div className='form-group'>
+          <input type='username' value={this.state.user.username} className="form-control" id="username" onChange={this.onChange} />
+>>>>>>> d5f1091de71aa8b156aaa0323e7490297b29ce4c
         </div>
-          {this.renderPath(this.state.path)}  
-        </div>  
-      <div>
-        <input value={this.state.user.username}
-           onChange={e => { this.setState({ username: e.target.value }) }} />
-         <input value={this.state.user.password}
-          onChange={e => { this.setState({ password: e.target.value }) }} />
-        <button onClick={this.buttonClicked}>Login</button>
-      </div> 
+        <div className='form-group'>
+        <input type='password' value={this.state.user.password} className="form-control" id="password" onChange={this.onChange} />    
+        </div>
+          <button onClick={this.login}>Login</button>
+
+      </form>
           
         <p className="App-intro"><h2>
           Join Viddle today and be part of next gen social media phenomena

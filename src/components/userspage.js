@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import user_navbar from './user_navbar';
-import user_sortbar from'./user_sortbar';
-import user_content from './user_content';
-import ReactPlayer from 'react-player';
+// import user_content from './user_content';
+// import ReactPlayer from 'react-player';
 
 
 
@@ -49,6 +47,9 @@ class UsersPage extends Component {
   render() {
     return (
       <div className='container'>
+              {
+          this.props.goodLogin && <h1>Hello! {this.props.username}</h1>
+        }
         <form onSubmit={this.formSubmit}>
           <div className='form-group'>
             <label for="userUrl">Paste the URL below</label>
@@ -57,6 +58,8 @@ class UsersPage extends Component {
           <button type='submit' className="btn btn-dark">Submit</button>
         </form>
       </div>
+
+      
     );
   }
 }
