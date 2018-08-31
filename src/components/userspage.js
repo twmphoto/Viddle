@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { LOGIN, HOME, NEWUSERS } from '../constants/constants';
 // import user_content from './user_content';
 // import ReactPlayer from 'react-player';
 
@@ -52,7 +53,7 @@ class UsersPage extends Component {
         }
         <form onSubmit={this.formSubmit}>
           <div className='form-group'>
-            <label for="userUrl">Paste the URL below</label>
+            <label htmlFor="userUrl">Paste the URL below</label>
             <input type="text" value={this.urls} onChange={this.onUrlChange} className="form-control" id='userUrl' placeholder='URL' />
           </div>
           <button type='submit' className="btn btn-dark">Submit</button>
