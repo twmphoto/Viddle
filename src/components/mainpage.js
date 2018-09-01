@@ -6,8 +6,8 @@ import React, { Component } from 'react';
 
 class MainPage extends Component {
     state = {
-        username: '',
-        password: ''
+        username: 'asda',
+        password: 'asdasd'
     }
 
     onChange = e => {
