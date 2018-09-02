@@ -1,30 +1,36 @@
+
 import React, { Component } from 'react';
 import { LOGIN, HOME, NEWUSERS } from '../constants/constants';
-// import user_content from './user_content';
-// import ReactPlayer from 'react-player';
-import './userstyles.css';
+import ReactPlayer from 'react-player';
+import { version } from '../../package.json'
+
+
+
+
 
 
 
 
 class UsersPage extends Component {
   state = {
-    newurl:[],  
-    urls: ['https://youtu.be/tpUt4KGPZTY'],
+    // newlinks:[],  
+    links: [],
+    url: '',
+    isValid: false
 
   }
 
 
-  NewUrlLink = url =>{
-    let newLink = [...this.state.urls, url]
-    this.setState({
-      urls: newLink
-    })
-  }
+  // NewUrlLink = links =>{
+  //   let newLink = [...this.state.links, links]
+  //   this.setState({
+  //     links: newLink
+  //   })
+  // }
 
   onUrlChange = e => {
     this.setState({
-      urls:''
+      url: e.target.value
     })
   }
 
@@ -33,13 +39,12 @@ class UsersPage extends Component {
     e.preventDefault();
 
     // object { email, username, password }
-    this.state.urls;
-
+    let newLink = [...this.state.links, this.state.url]
     this.setState({
-      urls:[],
+      links: newLink,
+      url: ''
     })
   }
-
 
 
 
@@ -48,28 +53,37 @@ class UsersPage extends Component {
   render() {
     return (
       <div className='container'>
-              {
-          this.props.goodLogin && <h1>Hello! {this.props.username}</h1>
-        }
+        <div className='page-header'>
+          <h1>This is our user page</h1>
+        </div>
         <form onSubmit={this.formSubmit}>
           <div className='form-group'>
             <label htmlFor="userUrl">Paste the URL below</label>
-            <input type="text" value={this.urls} onChange={this.onUrlChange} className="form-control" id='userUrl' placeholder='URL' />
+            <input type="text" value={this.state.url} onChange={this.onUrlChange} className="form-control" id='userUrl' placeholder='URL' />
           </div>
           <button type='submit' className="btn btn-dark">Submit</button>
         </form>
+        <div className='player-wrapper'>
+          {this.state.links.map(url => (
+            <ReactPlayer
+              className='react-player'
+              url={url}
+              width='100%'
+              height='100%'
+            />
+          ))}
+        </div>
       </div>
-
-      
     );
   }
 }
 
 
 
-        //{/* {this.state.urls.map(url => <ReactPlayer url={url} />)}
+
 
 
 
 
 export default UsersPage;
+
