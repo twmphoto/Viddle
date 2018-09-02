@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { LOGIN, HOME, NEWUSERS } from '../constants/constants';
 // import user_content from './user_content';
 // import ReactPlayer from 'react-player';
-
+import './userstyles.css';
 
 
 
