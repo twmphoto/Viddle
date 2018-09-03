@@ -26,7 +26,7 @@ class MainPage extends Component {
         return (
 
             <div>
-                <div>
+                <div className = "headerOne">
                     <h1> Welcome to Viddle. Please Sign In.</h1>
                 </div>
 
@@ -51,14 +51,14 @@ class MainPage extends Component {
                     <div><h3>Collect</h3></div>
                     <div><h3>Display</h3></div>
                     <div><h3>Share</h3></div>
-                    <div>
+                    <div className ="infobox">
                         <p>Collect all your favorite videos from your favorite media sites into on seamless user experience</p>
                     </div>
-                    <div>
-                        <p>Post your latest video find to your personal wall.</p>
+                    <div className ="infobox">
+                        <p>Post your latest video find to your personal wall, and customize it for your own</p>
                     </div>
-                    <div>
-                        <p>Share your interests with the world, and meet new friends</p>
+                    <div className ="infobox">
+                        <p>Share your interests with the world, and meet new friends through your media channel</p>
                     </div>
                 </div>
             </div>
