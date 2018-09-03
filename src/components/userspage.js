@@ -33,12 +33,17 @@ class UsersPage extends Component {
     })
   }
 
+  addtoLinks = links => {
+  let newLink = [...this.state.url, links];
+  this.setState({links: newLink})
+
+  }
 
   formSubmit = e => {
     e.preventDefault();
 
     // object { email, username, password }
-    let newLink = [...this.state.links, this.state.url]
+    let newLink = [...this.state.url, this.state.url]
     this.setState({
       links: newLink,
       url: ''
@@ -62,16 +67,14 @@ class UsersPage extends Component {
           </div>
           <button type='submit' className="btn btn-dark">Submit</button>
         </form>
-        <div className='player-wrapper'>
-          {this.state.links.map(url => (
-            <ReactPlayer
-              className='react-player'
-              url={url}
-              width='100%'
-              height='100%'
-            />
-          ))}
-        </div>
+            <div className='player-wrapper'>
+              {this.state.links.map(url => (
+                <ReactPlayer
+                playing
+                url={url}
+                />
+              ))}
+            </div>
       </div>
     );
   }

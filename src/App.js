@@ -89,7 +89,7 @@ class App extends Component {
   render() {
     return (
 
-      <div className="container">
+      <div className="container-fluid">
         <header className="App-header">
           <img src={"./components/photo.jpg"} />
         </header>
