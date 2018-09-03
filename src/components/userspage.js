@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import { LOGIN, HOME, NEWUSERS } from '../constants/constants';
 import ReactPlayer from 'react-player';
@@ -21,12 +20,6 @@ class UsersPage extends Component {
   }
 
 
-  // NewUrlLink = links =>{
-  //   let newLink = [...this.state.links, links]
-  //   this.setState({
-  //     links: newLink
-  //   })
-  // }
 
   onUrlChange = e => {
     this.setState({
@@ -34,17 +27,12 @@ class UsersPage extends Component {
     })
   }
 
-  addtoLinks = links => {
-  let newLink = [...this.state.url, links];
-  this.setState({links: newLink})
-
-  }
 
   formSubmit = e => {
     e.preventDefault();
 
     // object { email, username, password }
-    let newLink = [...this.state.url, this.state.url]
+    let newLink = [...this.state.links, this.state.url]
     this.setState({
       links: newLink,
       url: ''
@@ -57,7 +45,7 @@ class UsersPage extends Component {
 
   render() {
     return (
-      <div className='container'>
+      <div className='container-fluid'>
         <div className='page-header'>
           <h1>This is our user page</h1>
         </div>
@@ -68,14 +56,20 @@ class UsersPage extends Component {
           </div>
           <button type='submit' className="btn btn-dark">Submit</button>
         </form>
+        <div className='row'>
+          <div className="col">
             <div className='player-wrapper'>
               {this.state.links.map(url => (
                 <ReactPlayer
-                playing
-                url={url}
+                  className='react-player'
+                  url={url}
+                  width='25%'
+                  height='25%'
                 />
               ))}
             </div>
+          </div>
+        </div>
       </div>
     );
   }
