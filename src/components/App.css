@@ -48,9 +48,8 @@ margin: 20px auto;
 }
 
 .letterbox {
-position: relative;
-text-align:center;
-color:grey;
+width: 250px;
+height: auto;
 }
 
 .h3 {
@@ -81,6 +80,10 @@ border-radius: 10px
 }
 
 .headerOne {
-padding: 20px;
+padding: 10px;
 
+}
+
+.overdiv {
+border: 1px solid grey;
 }

@@ -25,7 +25,7 @@ class MainPage extends Component {
     render() {
         return (
 
-            <div>
+            <div className = "overdiv">
                 <div className = "headerOne">
                     <h1> Welcome to Viddle. Please Sign In.</h1>
                 </div>
@@ -44,9 +44,9 @@ class MainPage extends Component {
                 <h2 className="App-intro">Join Viddle today and be part of next gen social media phenomena </h2>
 
                 <div className="banners">
-                    <div className="letterbox"><img src={"./components/LeftBox.jpg"} /></div>
-                    <div className="letterbox"><img src={"./components/MiddleBox.jpg"} /></div>
-                    <div className="letterbox"><img src={"./components/RightBox.jpg"} /></div>
+                    <div ><img className="letterbox" src={"./components/LeftBox.jpg"} /></div>
+                    <div ><img className="letterbox" src={"./components/MiddleBox.jpg"} /></div>
+                    <div ><img className="letterbox" src={"./components/RightBox.jpg"} /></div>
 
                     <div><h3>Collect</h3></div>
                     <div><h3>Display</h3></div>

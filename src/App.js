@@ -90,7 +90,7 @@ class App extends Component {
     return (
 
       <div className="container">
-        <header className="App-header">
+        <header className="App-header" >
           <img src={"./components/photo.jpg"} />
         </header>
         {/* App Change 8/31 */}
