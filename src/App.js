@@ -91,7 +91,7 @@ class App extends Component {
 
       <div className="container">
         <header className="App-header" >
-          <img src={"./components/photo.jpg"} />
+          <img src={"./components/Main Header Image.jpg"} />
         </header>
         {/* App Change 8/31 */}
         {
