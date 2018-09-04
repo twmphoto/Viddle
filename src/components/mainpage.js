@@ -14,14 +14,17 @@ class MainPage extends Component {
    
     onChange = e => {
         this.setState({
-            [e.target.name]: e.target.value
-        });
+            [e.target.name]: e.target.value,
+                    });
     }
 
     submitLogin = e => {
         e.preventDefault();
 
         this.props.login(this.state);
+        this.setState({username: '', password: ''})
+        
+        
     }
 
     render() {
