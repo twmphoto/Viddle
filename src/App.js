@@ -44,7 +44,7 @@ class App extends Component {
     } else {
       this.setState({ goodLogin: false });
 
-      console.log('bad')
+      alert('Incorrect username/password')
     }
 
   }
