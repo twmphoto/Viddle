@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 // import { LOGIN, HOME, USERS } from '../constants/constants';
 import './App.css';
+import Signup from './signup'
 
 
 
 class MainPage extends Component {
     state = {
-        username: 'asda',
-        password: 'asdasd'
+        username: 'asd',
+        password: 'asd'
     }
 
+   
     onChange = e => {
         this.setState({
             [e.target.name]: e.target.value
@@ -27,10 +29,20 @@ class MainPage extends Component {
 
             <div className = "overdiv">
                 <div className = "headerOne">
-                    <h1> Welcome to Viddle. Please Sign In.</h1>
+                    <h1> Welcome to Viddle</h1>
+                </div>
+                <a href="#modalWindow" ><h5>Sign-up for an Account</h5></a>
+                <div id="modalWindow" class="modalBox">
+                <div>
+                <a class="closeWindow" href="#close">X</a>
+                <Signup />
+                <div></div>
+                
+                </div>
                 </div>
 
                 <form onSubmit={this.submitLogin}>
+                 
                     <div className='form-group'>
                         <input type='username' value={this.state.username} name="username" className="form-control" id="username" onChange={this.onChange} />
                     </div>

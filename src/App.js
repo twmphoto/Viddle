@@ -5,7 +5,8 @@ import './components/App.css';
 import userspage from './components/userspage'
 import { LOGIN, HOME, NEWUSERS } from './constants/constants';
 import UsersPage from './components/userspage';
-import MainPage from './components/mainpage'
+import MainPage from './components/mainpage';
+import Signup from './components/signup';
 
 class App extends Component {
   //Add Change 8/31 9:52AM
