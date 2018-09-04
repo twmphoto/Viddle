@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { LOGIN, HOME, NEWUSERS } from '../constants/constants';
 import ReactPlayer from 'react-player';
 import { version } from '../../package.json'
-// import Duration from 
 
 
 
@@ -14,7 +13,7 @@ import { version } from '../../package.json'
 class UsersPage extends Component {
   state = {
     // newlinks:[],  
-    links: ['https://youtu.be/QDjci1ODoBs',
+    links: ['https://youtu.be/GxSRZFHqsf4',
     'https://www.youtube.com/watch?v=GI_LAIt9zis',
     'https://youtu.be/QDjci1ODoBs',
     'https://youtu.be/kDOZGqsTCgw',
