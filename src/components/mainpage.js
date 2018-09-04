@@ -7,8 +7,8 @@ import Signup from './signup'
 
 class MainPage extends Component {
     state = {
-        username: 'asd',
-        password: 'asd'
+        username: 'asda',
+        password: 'asdasd'
     }
 
    

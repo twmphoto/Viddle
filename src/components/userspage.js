@@ -14,7 +14,15 @@ import { version } from '../../package.json'
 class UsersPage extends Component {
   state = {
     // newlinks:[],  
-    links: ['https://youtu.be/QDjci1ODoBs','https://youtu.be/QDjci1ODoBs','https://youtu.be/QDjci1ODoBs','https://youtu.be/QDjci1ODoBs','https://youtu.be/QDjci1ODoBs'],
+    links: ['https://youtu.be/QDjci1ODoBs',
+    'https://www.youtube.com/watch?v=GI_LAIt9zis',
+    'https://youtu.be/QDjci1ODoBs',
+    'https://youtu.be/kDOZGqsTCgw',
+    'https://www.youtube.com/watch?v=yhavtVpEW2E&list=PL7u4lWXQ3wfJTTpL9rKvp9AFQNqKj_YSz',
+    "https://www.twitch.tv/videos/303641243",
+    'https://soundcloud.com/jahseh-onfroy/hope',
+    'https://www.dailymotion.com/video/x5hou0n',
+  ],
     url: '',
     isValid: false,
     loaded: 0
