@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { LOGIN, HOME, NEWUSERS } from '../constants/constants';
 import ReactPlayer from 'react-player';
 import { version } from '../../package.json'
+// import Duration from 
 
 
 
@@ -13,13 +14,21 @@ import { version } from '../../package.json'
 class UsersPage extends Component {
   state = {
     // newlinks:[],  
-    links: [],
+    links: ['https://youtu.be/QDjci1ODoBs','https://youtu.be/QDjci1ODoBs','https://youtu.be/QDjci1ODoBs','https://youtu.be/QDjci1ODoBs','https://youtu.be/QDjci1ODoBs'],
     url: '',
-    isValid: false
+    isValid: false,
+    loaded: 0
 
   }
 
 
+  load = url => {
+    this.setState({
+      url,
+      played: 0,
+      loaded: 0
+    })
+  }
 
   onUrlChange = e => {
     this.setState({
@@ -43,9 +52,10 @@ class UsersPage extends Component {
 
 
 
+
   render() {
     return (
-      <div className='container-fluid'>
+      <div className='container'>
         <div className='page-header'>
           <h1>This is our user page</h1>
         </div>
@@ -56,31 +66,29 @@ class UsersPage extends Component {
           </div>
           <button type='submit' className="btn btn-dark">Submit</button>
         </form>
-        <div className='row'>
-          <div className="col">
-            <div className='player-wrapper'>
+          <div className='col-md react-player'>
+            <div className='row'>
               {this.state.links.map(url => (
                 <ReactPlayer
-                  className='react-player'
                   url={url}
-                  width='25%'
-                  height='25%'
+                  width='210px'
+                  height= '148px'
+
                 />
               ))}
+              </div>
             </div>
-          </div>
         </div>
-      </div>
     );
-  }
-}
-
-
-
-
-
-
-
-
-export default UsersPage;
-
+      }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    export default UsersPage;
+    
